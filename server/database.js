@@ -76,5 +76,15 @@ module.exports = {
       LIMIT(1);`
     const result = await client.query(summaryQuery, [ id ])
     return result.rows[0]
+  },
+
+  getKingdomSummary: async (id) => {
+    const summaryQuery = `
+      SELECT summary, url, claimedby
+      FROM kingdoms
+      WHERE gid = $1
+      LIMIT(1);`
+    const result = await client.query(summaryQuery, [ id ])
+    return result.rows[0]
   }
 }

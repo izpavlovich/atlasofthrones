@@ -22,7 +22,7 @@ const idValidator = validate({
 
 // Check that query param is valid location type
 const typeValidator = validate({
-  params: { type: joi.string().valid(['castle', 'city', 'town', 'ruin', 'landmark', 'region']).required() }
+  params: { type: joi.string().valid(['castle', 'city', 'town', 'ruin', 'landmark', 'region', 'battle']).required() }
 })
 
 // Hello World Test Endpoint
@@ -88,7 +88,7 @@ router.get('/kingdoms/:id/size', idValidator, async ctx => {
 // Respond with summary of kingdom, by id
 router.get('/kingdoms/:id/summary', idValidator, async ctx => {
   const id = ctx.params.id
-  const result = await database.getSummary('kingdoms', id)
+  const result = await database.getKingdomSummary(id)
   ctx.body = result || ctx.throw(404)
 })
 

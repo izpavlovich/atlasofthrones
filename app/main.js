@@ -23,7 +23,7 @@ class ViewController {
       this.api = new ApiService('https://api.atlasofthrones.com/')
     }
 
-    this.locationPointTypes = [ 'castle', 'city', 'town', 'ruin', 'region', 'landmark' ]
+    this.locationPointTypes = [ 'castle', 'city', 'town', 'ruin', 'region', 'landmark', 'battle' ]
     this.initializeComponents()
     this.loadMapData()
   }
@@ -97,6 +97,10 @@ class ViewController {
 
   /** Format icon url for layer type  */
   getIconUrl (layerName) {
+    if(layerName === 'battle') {
+      layerName = 'castle';
+    }
+    
     return `https://cdn.patricktriest.com/atlas-of-thrones/icons/${layerName}.svg`
   }
 }

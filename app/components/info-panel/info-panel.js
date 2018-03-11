@@ -44,6 +44,11 @@ export class InfoPanel extends Component {
     // Return filled HTML template
     return `
       <h3>KINGDOM</h3>
+      <div>Claimed by: ${kingdomSummary.claimedby}
+      <br />
+      <img height="80" width="80" src="http://lena.pavlovic.me/atlas-of-thrones/images/sigils/${kingdomSummary.claimedby}.png" alt-text="sigil" />
+      </div>
+      
       <div>Size Estimate - ${kingdomSize} km<sup>2</sup></div>
       <div>Number of Castles - ${castleCount}</div>
       ${summaryHTML}

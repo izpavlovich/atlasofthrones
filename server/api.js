@@ -22,7 +22,7 @@ const idValidator = validate({
 
 // Check that query param is valid location type
 const typeValidator = validate({
-  params: { type: joi.string().valid(['castle', 'city', 'town', 'ruin', 'landmark', 'region', 'battle']).required() }
+  params: { type: joi.string().valid(['castle', 'city', 'town', 'ruin', 'landmark', 'region', 'battle', 'character']).required() }
 })
 
 // Hello World Test Endpoint

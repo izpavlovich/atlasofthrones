@@ -72,6 +72,12 @@
   font-weight: bold;
 }
 
+.info-img {
+  float: right;
+  padding-left: 25px;
+  width:140px;
+}
+
 @media (max-width: 600px) {
   .info-container  {
     left: 0;
